@@ -11,6 +11,9 @@ use function Hyphe\Functions\{save_json, read_json};
 // include compile file
 include_once 'Compile.php';
 
+// define GLOB_BRACE
+if(!defined('GLOB_BRACE')) define('GLOB_BRACE', 128);
+
 /**
  *@author Ifeanyi Amadi https://amadiify.com/
  *@version 1.0
