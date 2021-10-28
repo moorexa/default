@@ -414,7 +414,7 @@ class Directives implements EngineInterface
     }
 
     // run directives
-    public static function runDirective($called = false, $attrName, $attrLine = '', $class = null, &$output = '')
+    public static function runDirective($called = false, $attrName = '', $attrLine = '', $class = null, &$output = '')
     {
         if (isset(self::$directives[$attrName]))
         {
@@ -668,7 +668,7 @@ class Directives implements EngineInterface
     }
 
     // check if document has directive
-    private static function hasDirectives(&$content, &$matches = [], &$instance)
+    private static function hasDirectives(&$content, &$matches = [], &$instance = null)
     {
         $customDirectives = array_keys(self::$directives);
 
