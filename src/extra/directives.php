@@ -298,6 +298,39 @@ Directives::register([
         // return string
         return $ref;
     },
+
+    /**
+     * @method static
+     * @return string
+     * 
+     * Would return a full path to a static file
+     */
+    'static' => function(string $path) : string 
+    {
+        return func()->url('assets/'.$path);
+    },
+
+    /**
+     * @method if:alert
+     * @return string
+     * 
+     * Would check for alert
+     */
+    'alert' => function(string $name) : string 
+    {
+        return '<?php if (alert()->has('.$name.')) { $message = alert()->get('.$name.'); ?>';
+    },
+
+    /**
+     * @method static
+     * @return string
+     * 
+     * Would check for alert
+     */
+    'endalert' => function() : string 
+    {
+        return '<?php } ?>';
+    },
 ],
 
 
