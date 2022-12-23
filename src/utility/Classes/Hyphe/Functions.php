@@ -32,7 +32,7 @@ function read_json($path, $toarray = false)
 	{
 		\Moorexa\Event::emit('json.error', $path . 'doesn\'t exists. Please check file path.');
 		
-		if (env('bootstrap','debugMode') == 'on')
+		if (get_env('bootstrap','debugMode') == 'on')
 		{
 			error($path . 'doesn\'t exists. Please check file path.');
 		}
@@ -59,7 +59,7 @@ function save_json($path, $data)
 	{
 		\Moorexa\Event::emit('json.error', $path . 'isn\'t writable or doesn\'t exists.');
 
-		if (env('bootstrap','debugMode') == 'on')
+		if (get_env('bootstrap','debugMode') == 'on')
 		{
 			error($path . 'isn\'t writable or doesn\'t exists.');
 		}
